@@ -1,0 +1,11 @@
+.upload-filter-label-phobos .upload-filter-preview,
+.filter-phobos {
+  -webkit-filter: brightness(1.2) contrast(144%);
+  filter: brightness(1.2) contrast(144%);
+}
+
+.upload-filter-label-heat .upload-filter-preview,
+.filter-heat {
+  -webkit-filter: contrast(125%) hue-rotate(336deg);
+          filter: grayscale(50%)contrast(125%) hue-rotate(336deg);
+}
