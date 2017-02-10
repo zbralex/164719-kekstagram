@@ -1,3 +1,4 @@
+'use strict';
 var uploadOverlay = document.querySelector('.upload-overlay');
 uploadOverlay.classList.add('invisible');
 var uploadSelectImage = document.querySelector('#upload-select-image');
@@ -18,10 +19,10 @@ uploadFilterForm.addEventListener('change', function () {
   var selectedFilter = uploadFilterForm['upload-filter'].value;
   var filterCssClass = 'filter-' + selectedFilter;
   if (prevFilterClass) {
-    filterImagePreview.classList.remove(prevFilterClass)
+    filterImagePreview.classList.remove(prevFilterClass);
   }
   prevFilterClass = filterCssClass;
-  filterImagePreview.classList.add(filterCssClass)
+  filterImagePreview.classList.add(filterCssClass);
 });
 
 var resizeButtonDec = document.querySelector('.upload-resize-controls-button-dec');
@@ -31,10 +32,10 @@ var valueElement = document.querySelector('.upload-resize-controls-value');
 resizeButtonDec.addEventListener('click', function () {
   var newScale = getElementScaleValue() - 25;
   if (newScale <= 25) {
-    newScale = 25
+    newScale = 25;
   }
   setScaleToElement(newScale);
-  updatePreviewScale()
+  updatePreviewScale();
 });
 resizeButtonInc.addEventListener('click', function () {
   var newScale = getElementScaleValue() + 25;
