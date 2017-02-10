@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Александр Зубрицкий](https://up.htmlacademy.ru/javascript/8/user/164719).
-* Наставник: `Олег Плотников` (https://htmlacademy.ru/profile/id230042).
+* Наставник: `Олег Плотников`(https://htmlacademy.ru/profile/id230042).
 
 ---
 
