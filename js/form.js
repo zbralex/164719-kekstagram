@@ -9,7 +9,7 @@ uploadFile.addEventListener('change', function () {
 var uploadFormCancel = document.querySelector('.upload-form-cancel');
 uploadFormCancel.addEventListener('click', function () {
   uploadOverlay.classList.add('invisible');
-  });
+});
 
 var filterImagePreview = document.querySelector('.filter-image-preview');
 var uploadFilterForm = document.querySelector('.upload-filter');
@@ -50,7 +50,7 @@ function updatePreviewScale() {
 }
 
 function getElementScaleValue() {
-  return parseInt(valueElement.value,10);
+  return parseInt(valueElement.value, 10);
 }
 
 function setScaleToElement(value) {
