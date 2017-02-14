@@ -47,11 +47,7 @@ uploadSelectImage.addEventListener('keydown', function (evt) {
 
 
 // применение фильтров клавишей enter
-uploadFilterForm.addEventListener('keydown', function (evt){
-  if (evt.keyCode === ENTER_KEY_CODE) {
-    uploadFilterForm();
-  }
-  });
+uploadFilterForm.addEventListener('keydown', uploadFilterForm);
 
 
 
