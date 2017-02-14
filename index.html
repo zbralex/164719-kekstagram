@@ -28,7 +28,7 @@
     <button class="upload-submit upload-control" type="submit"></button>
   </form>
 
-  <div class="upload-overlay">
+  <div class="upload-overlay" role="button" aria-pressed="false" tabindex="0">
     <form class="upload-form upload-filter" id="upload-filter" method="post" enctype="multipart/form-data">
       <fieldset class="upload-resize-controls">
         <button type="button"
@@ -55,7 +55,7 @@
         </div>
 
         <input type="radio" name="upload-filter" id="upload-filter-none" value="none" checked>
-        <label class="upload-filter-label" for="upload-filter-none" role="button" aria-pressed="false" tabindex="1">
+        <label class="upload-filter-label" for="upload-filter-none">
           <div class="upload-filter-preview"></div>
           Оригинал
         </label>
