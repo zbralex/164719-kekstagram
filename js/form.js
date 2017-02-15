@@ -7,36 +7,32 @@ uploadOverlay.classList.add('invisible');
 var uploadSelectImage = document.querySelector('#upload-select-image');
 uploadSelectImage.classList.remove('invisible');
 var uploadFile = document.querySelector('#upload-file');
-uploadFile.addEventListener('change', function () {
-
-});
+uploadFile.addEventListener('change', showElementOverlay);
 var uploadFormCancel = document.querySelector('.upload-form-cancel');
 uploadFormCancel.addEventListener('click', function () {
   uploadOverlay.classList.add('invisible');
 });
 // функция показа элемента
-function showElement() {
+function showElementOverlay() {
   uploadSelectImage.classList.add('invisible');
   uploadOverlay.classList.remove('invisible');
 }
 // функция скрытия элемента
-function hideElement() {
+function hideElementOverlay() {
   uploadSelectImage.classList.remove('invisible');
   uploadOverlay.classList.add('invisible');
-  document.removeEventListener('keydown', tryHideElement);
+  document.removeEventListener('keydown', tryHideElementOverlay);
 }
-// функция попытыки скрытия элемента
-function tryHideElement(evt) {
+
+function tryHideElementOverlay(evt) {
   if (evt.keyCode === ESCAPE_KEY_CODE) {
-    hideElement();
+    hideElementOverlay();
   }
 }
 uploadSelectImage.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEY_CODE) {
-    showElement();
-    document.addEventListener('keydown', function () {
-      tryHideElement();
-    });
+    showElementOverlay();
+    document.addEventListener('keydown',tryHideElementOverlay);
   }
 });
 
