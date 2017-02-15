@@ -32,7 +32,7 @@ function tryHideElementOverlay(evt) {
 uploadSelectImage.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEY_CODE) {
     showElementOverlay();
-    document.addEventListener('keydown',tryHideElementOverlay);
+    document.addEventListener('keydown', tryHideElementOverlay);
   }
 });
 
