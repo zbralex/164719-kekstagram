@@ -14,19 +14,28 @@ var uploadFormCancel = document.querySelector('.upload-form-cancel');
 uploadFormCancel.addEventListener('click', function () {
   uploadOverlay.classList.add('invisible');
 });
-
-// добавляем кейкод на клавишу enter для кнопки выбора фото
+// функция показа элемента
+function showElement() {
+  uploadSelectImage.classList.add('invisible');
+  uploadOverlay.classList.remove('invisible');
+}
+// функция скрытия элемента
+function hideElement() {
+  uploadSelectImage.classList.remove('invisible');
+  uploadOverlay.classList.add('invisible');
+  document.removeEventListener('keydown', tryHideElement);
+}
+// функция попытыки скрытия элемента
+function tryHideElement(evt) {
+  if (evt.keyCode === ESCAPE_KEY_CODE) {
+    hideElement();
+  }
+}
 uploadSelectImage.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEY_CODE) {
-    uploadSelectImage.classList.add('invisible');
-    uploadOverlay.classList.remove('invisible');
-
-    // если окно открыто, то при нажатии на esc окно закрывается
-    document.addEventListener('keydown', function () {
-      if (evt.keyCode === ESCAPE_KEY_CODE) {
-        uploadSelectImage.classList.remove('invisible');
-        uploadOverlay.classList.add('invisible');
-      }
+    showElement();
+    document.addEventListener('keydown', function (evt) {
+      tryHideElement();
     });
   }
 });
