@@ -22,12 +22,12 @@ uploadSelectImage.addEventListener('keydown', function (evt) {
     uploadOverlay.classList.remove('invisible');
 
     // если окно открыто, то при нажатии на esc окно закрывается
-    document.addEventListener('keydown', function (evt) {
+    document.addEventListener('keydown', function () {
       if (evt.keyCode === ESCAPE_KEY_CODE) {
         uploadSelectImage.classList.remove('invisible');
         uploadOverlay.classList.add('invisible');
       }
-    })
+    });
   }
 });
 
