@@ -34,7 +34,7 @@ function tryHideElement(evt) {
 uploadSelectImage.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEY_CODE) {
     showElement();
-    document.addEventListener('keydown', function (evt) {
+    document.addEventListener('keydown', function () {
       tryHideElement();
     });
   }
