@@ -1,21 +1,53 @@
 'use strict';
+var ESCAPE_KEY_CODE = 27;
+var ENTER_KEY_CODE = 13;
+
 var uploadOverlay = document.querySelector('.upload-overlay');
 uploadOverlay.classList.add('invisible');
 var uploadSelectImage = document.querySelector('#upload-select-image');
 uploadSelectImage.classList.remove('invisible');
 var uploadFile = document.querySelector('#upload-file');
-uploadFile.addEventListener('change', function () {
-  uploadOverlay.classList.remove('invisible');
-});
+uploadFile.addEventListener('change', showElementOverlay);
 var uploadFormCancel = document.querySelector('.upload-form-cancel');
 uploadFormCancel.addEventListener('click', function () {
   uploadOverlay.classList.add('invisible');
+  uploadSelectImage.classList.remove('invisible');
+});
+// функция показа элемента
+function showElementOverlay() {
+  uploadSelectImage.classList.add('invisible');
+  uploadOverlay.classList.remove('invisible');
+}
+// функция скрытия элемента
+function hideElementOverlay() {
+  uploadSelectImage.classList.remove('invisible');
+  uploadOverlay.classList.add('invisible');
+  document.removeEventListener('keydown', tryHideElementOverlay);
+}
+
+function tryHideElementOverlay(evt) {
+  if (evt.keyCode === ESCAPE_KEY_CODE) {
+    hideElementOverlay();
+  }
+}
+uploadSelectImage.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === ENTER_KEY_CODE) {
+    showElementOverlay();
+    document.addEventListener('keydown', tryHideElementOverlay);
+  }
 });
 
+// применение фильтров
 var filterImagePreview = document.querySelector('.filter-image-preview');
 var uploadFilterForm = document.querySelector('.upload-filter');
 var prevFilterClass;
-uploadFilterForm.addEventListener('change', function () {
+var prevAreaPressedLabel;
+
+// пресловутый чейндж - выбор нужного фильтра
+uploadFilterForm.addEventListener('change', onFilterChange);
+
+// функция выбора фильтра - код оптимизирован из отдельных переменных в отдельную ф-ю
+function onFilterChange() {
   var selectedFilter = uploadFilterForm['upload-filter'].value;
   var filterCssClass = 'filter-' + selectedFilter;
   if (prevFilterClass) {
@@ -23,8 +55,29 @@ uploadFilterForm.addEventListener('change', function () {
   }
   prevFilterClass = filterCssClass;
   filterImagePreview.classList.add(filterCssClass);
+  toggleAreaPressed(selectedFilter);
+}
+// обновляем атрибуты area-pressed
+function toggleAreaPressed(selectedFilter) {
+  if (prevAreaPressedLabel) {
+    prevAreaPressedLabel.setAttribute('area-pressed', 'false');
+  }
+  var labelElement = document.querySelector('.upload-filter-label-' + selectedFilter);
+  labelElement.setAttribute('area-pressed', 'true');
+  prevAreaPressedLabel = labelElement;
+}
+
+// применение фильтров клавишей enter
+var uploadFilterControls = document.querySelector('.upload-filter-controls');
+uploadFilterControls.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === ENTER_KEY_CODE) {
+    var inputElement = event.target.previousElementSibling;
+    uploadFilterForm['upload-filter'].value = inputElement.getAttribute('value');
+    onFilterChange();
+  }
 });
 
+// РЕСАЙЗ
 var resizeButtonDec = document.querySelector('.upload-resize-controls-button-dec');
 var resizeButtonInc = document.querySelector('.upload-resize-controls-button-inc');
 var valueElement = document.querySelector('.upload-resize-controls-value');

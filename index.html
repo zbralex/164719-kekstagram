@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans&subset=latin,cyrillic">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans&subset=latin,cyrillic">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/custom.css">
   <title>Кекстаграм</title>
@@ -23,16 +24,21 @@
 <div class="upload">
   <form class="upload-form upload-image invisible" id="upload-select-image" method="post" enctype="multipart/form-data">
     <input type="file" id="upload-file" class="upload-input" name="filename" required>
-    <label class="upload-file upload-control" for="upload-file"></label>
+    <label class="upload-file upload-control" for="upload-file" role="form" aria-pressed="false" tabindex="1"></label>
     <button class="upload-submit upload-control" type="submit"></button>
   </form>
 
   <div class="upload-overlay">
     <form class="upload-form upload-filter" id="upload-filter" method="post" enctype="multipart/form-data">
       <fieldset class="upload-resize-controls">
-        <button type="button" class="upload-resize-control upload-resize-controls-button upload-resize-controls-button-dec">–</button><!--
-        --><input type="text" class="upload-resize-control upload-resize-controls-value" value="100%" readonly /><!--
-        --><button type="button" class="upload-resize-control upload-resize-controls-button upload-resize-controls-button-inc">+</button>
+        <button type="button"
+                class="upload-resize-control upload-resize-controls-button upload-resize-controls-button-dec">–
+        </button><!--
+        --><input type="text" class="upload-resize-control upload-resize-controls-value" value="100%" readonly/><!--
+        -->
+        <button type="button"
+                class="upload-resize-control upload-resize-controls-button upload-resize-controls-button-inc">+
+        </button>
       </fieldset>
 
       <div class="upload-form-preview">
@@ -49,37 +55,37 @@
         </div>
 
         <input type="radio" name="upload-filter" id="upload-filter-none" value="none" checked>
-        <label class="upload-filter-label" for="upload-filter-none">
+        <label class="upload-filter-label upload-filter-label-none" for="upload-filter-none" role="button" aria-pressed="false" tabindex="1" >
           <div class="upload-filter-preview"></div>
           Оригинал
         </label>
 
         <input type="radio" name="upload-filter" id="upload-filter-chrome" value="chrome">
-        <label class="upload-filter-label upload-filter-label-chrome" for="upload-filter-chrome">
+        <label class="upload-filter-label upload-filter-label-chrome" for="upload-filter-chrome" role="button" aria-pressed="false" tabindex="1">
           <div class="upload-filter-preview"></div>
           Хром
         </label>
 
         <input type="radio" name="upload-filter" id="upload-filter-sepia" value="sepia">
-        <label class="upload-filter-label upload-filter-label-sepia" for="upload-filter-sepia">
+        <label class="upload-filter-label upload-filter-label-sepia" for="upload-filter-sepia" role="button" aria-pressed="false" tabindex="1">
           <div class="upload-filter-preview"></div>
           Сепия
         </label>
 
         <input type="radio" name="upload-filter" id="upload-filter-marvin" value="marvin">
-        <label class="upload-filter-label upload-filter-label-marvin" for="upload-filter-marvin">
+        <label class="upload-filter-label upload-filter-label-marvin" for="upload-filter-marvin" role="button" aria-pressed="false" tabindex="1">
           <div class="upload-filter-preview"></div>
           Марвин
         </label>
 
         <input type="radio" name="upload-filter" id="upload-filter-phobos" value="phobos">
-        <label class="upload-filter-label upload-filter-label-phobos" for="upload-filter-phobos">
+        <label class="upload-filter-label upload-filter-label-phobos" for="upload-filter-phobos" role="button" aria-pressed="false" tabindex="1">
           <div class="upload-filter-preview"></div>
           Фобос
         </label>
 
         <input type="radio" name="upload-filter" id="upload-filter-heat" value="heat">
-        <label class="upload-filter-label upload-filter-label-heat" for="upload-filter-heat">
+        <label class="upload-filter-label upload-filter-label-heat" for="upload-filter-heat" role="button" aria-pressed="false" tabindex="1">
           <div class="upload-filter-preview"></div>
           Зной
         </label>
@@ -103,13 +109,21 @@
 <footer class="footer container">
   <div class="center-wrapper">
     <section class="footer-logo">
-      Сделано в <a tabindex="1" href="http://htmlacademy.ru" class="footer-logo-link"><img src="img/ha-logo.png" class="footer-logo-image" width="130" alt="HTML Academy" />HTML Academy</a> &copy; 2017
+      Сделано в <a tabindex="1" href="http://htmlacademy.ru" class="footer-logo-link"><img src="img/ha-logo.png"
+                                                                                           class="footer-logo-image"
+                                                                                           width="130"
+                                                                                           alt="HTML Academy"/>HTML
+      Academy</a> &copy; 2017
     </section>
     <nav class="footer-social">
-      <a tabindex="1" href="https://twitter.com/htmlacademy_ru" alt="twitter" class="footer-social-item footer-social-item-twitter" target="_blank" rel="nofollow">Twitter</a>
-      <a tabindex="1" href="https://www.instagram.com/htmlacademy/" alt="instagram" class="footer-social-item footer-social-item-instagram" target="_blank" rel="nofollow">Instagtam</a>
-      <a tabindex="1" href="https://www.facebook.com/htmlacademy" alt="facebook" class="footer-social-item footer-social-item-facebook" target="_blank" rel="nofollow">Facebook</a>
-      <a tabindex="1" href="https://vk.com/htmlacademy" alt="vk" class="footer-social-item footer-social-item-vk" target="_blank" rel="nofollow">VK</a>
+      <a tabindex="1" href="https://twitter.com/htmlacademy_ru" alt="twitter"
+         class="footer-social-item footer-social-item-twitter" target="_blank" rel="nofollow">Twitter</a>
+      <a tabindex="1" href="https://www.instagram.com/htmlacademy/" alt="instagram"
+         class="footer-social-item footer-social-item-instagram" target="_blank" rel="nofollow">Instagtam</a>
+      <a tabindex="1" href="https://www.facebook.com/htmlacademy" alt="facebook"
+         class="footer-social-item footer-social-item-facebook" target="_blank" rel="nofollow">Facebook</a>
+      <a tabindex="1" href="https://vk.com/htmlacademy" alt="vk" class="footer-social-item footer-social-item-vk"
+         target="_blank" rel="nofollow">VK</a>
     </nav>
   </div>
 </footer>
