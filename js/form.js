@@ -11,6 +11,7 @@ uploadFile.addEventListener('change', showElementOverlay);
 var uploadFormCancel = document.querySelector('.upload-form-cancel');
 uploadFormCancel.addEventListener('click', function () {
   uploadOverlay.classList.add('invisible');
+  uploadSelectImage.classList.remove('invisible');
 });
 // функция показа элемента
 function showElementOverlay() {
