@@ -19,5 +19,5 @@
     });
     setScaleToValueElement(initScale * 100);
     newScaleCallBack(initScale);
-  }
+  };
 })();

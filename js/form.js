@@ -1,7 +1,8 @@
 'use strict';
 var ESCAPE_KEY_CODE = 27;
 var ENTER_KEY_CODE = 13;
-// resize variants
+// resize variables
+
 var resizeButtonDec = document.querySelector('.upload-resize-controls-button-dec');
 var resizeButtonInc = document.querySelector('.upload-resize-controls-button-inc');
 var valueElement = document.querySelector('.upload-resize-controls-value');
