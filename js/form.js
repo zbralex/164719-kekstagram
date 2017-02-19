@@ -2,6 +2,11 @@
 var ESCAPE_KEY_CODE = 27;
 var ENTER_KEY_CODE = 13;
 
+// resize variants
+var resizeButtonDec = document.querySelector('.upload-resize-controls-button-dec');
+var resizeButtonInc = document.querySelector('.upload-resize-controls-button-inc');
+var valueElement = document.querySelector('.upload-resize-controls-value');
+
 
 var uploadOverlay = document.querySelector('.upload-overlay');
 uploadOverlay.classList.add('invisible');
@@ -37,3 +42,20 @@ uploadSelectImage.addEventListener('keydown', function (evt) {
     document.addEventListener('keydown', tryHideElementOverlay);
   }
 });
+function setScaleToValueElement(value) {
+  valueElement.value = value + '%';
+}
+function getElementScaleValue() {
+  return parseInt(valueElement.value, 10);
+}
+
+(function () {
+  var filterImagePreview = document.querySelector('.filter-image-preview');
+  var uploadResizeControls = document.querySelector('.upload-resize-controls');
+
+  function onScaleChanged(newScale) {
+    filterImagePreview.style.transform = 'scale(' + newScale + ')';
+  }
+
+  window.initializeScale(uploadResizeControls, 25, 1, onScaleChanged);
+})();

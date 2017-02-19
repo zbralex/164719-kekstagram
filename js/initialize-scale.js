@@ -1,38 +1,26 @@
 'use strict';
+(function () {
 
-// РЕСАЙЗ
-function initializeScale () {
-  var resizeButtonDec = document.querySelector('.upload-resize-controls-button-dec');
-  var resizeButtonInc = document.querySelector('.upload-resize-controls-button-inc');
-  var valueElement = document.querySelector('.upload-resize-controls-value');
+  window.initializeScale = function (controlsContainer, step, initScale, newScaleCallBack) {
 
-  resizeButtonDec.addEventListener('click', function () {
-    var newScale = getElementScaleValue() - 25;
-    if (newScale <= 25) {
-      newScale = 25;
-    }
-    setScaleToElement(newScale);
-    updatePreviewScale();
-  });
-  resizeButtonInc.addEventListener('click', function () {
-    var newScale = getElementScaleValue() + 25;
-    if (newScale >= 100) {
-      newScale = 100;
-    }
-    setScaleToElement(newScale);
-    updatePreviewScale();
-  });
+    controlsContainer.addEventListener('click', function (evt) {
+      if (evt.target === resizeButtonDec || evt.target === resizeButtonInc) {
+        var stepSign;
+        if (evt.target === resizeButtonDec) {
+          stepSign = -1;
+        }
+        else {
+          stepSign = 1;
+        }
 
-  function updatePreviewScale() {
-    filterImagePreview.style.transform = 'scale(' + (getElementScaleValue() / 100) + ')';
+        var newScale = getElementScaleValue() + stepSign * step;
+        if (newScale >= step && newScale <= 100) {
+          setScaleToValueElement(newScale);
+          newScaleCallBack(newScale / 100);
+        }
+      }
+    });
+    setScaleToValueElement(initScale * 100);
+    newScaleCallBack(initScale);
   }
-
-  function getElementScaleValue() {
-    return parseInt(valueElement.value, 10);
-  }
-
-  function setScaleToElement(value) {
-    valueElement.value = value + '%';
-  }
-}
-initializeScale ();
+})();
