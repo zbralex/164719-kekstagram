@@ -2,6 +2,7 @@
 var ESCAPE_KEY_CODE = 27;
 var ENTER_KEY_CODE = 13;
 
+
 var uploadOverlay = document.querySelector('.upload-overlay');
 uploadOverlay.classList.add('invisible');
 var uploadSelectImage = document.querySelector('#upload-select-image');
