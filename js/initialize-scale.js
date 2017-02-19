@@ -1,8 +1,6 @@
 'use strict';
 (function () {
-
   window.initializeScale = function (controlsContainer, step, initScale, newScaleCallBack) {
-
     controlsContainer.addEventListener('click', function (evt) {
       if (evt.target === resizeButtonDec || evt.target === resizeButtonInc) {
         var stepSign;
@@ -12,7 +10,6 @@
         else {
           stepSign = 1;
         }
-
         var newScale = getElementScaleValue() + stepSign * step;
         if (newScale >= step && newScale <= 100) {
           setScaleToValueElement(newScale);
