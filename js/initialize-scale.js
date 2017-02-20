@@ -1,12 +1,12 @@
 'use strict';
 (function () {
-  var resizeButtonDec = document.querySelector('.upload-resize-controls-button-dec');
-  var resizeButtonInc = document.querySelector('.upload-resize-controls-button-inc');
   var valueElement = document.querySelector('.upload-resize-controls-value');
   window.initializeScale = function (controlsContainer, step, initScale, newScaleCallBack) {
     setScaleToValueElement(initScale * 100);
     newScaleCallBack(initScale);
     controlsContainer.addEventListener('click', function (evt) {
+      var resizeButtonDec = controlsContainer.querySelector('.upload-resize-controls-button-dec');
+      var resizeButtonInc = controlsContainer.querySelector('.upload-resize-controls-button-inc');
       if (evt.target === resizeButtonDec || evt.target === resizeButtonInc) {
         var stepSign;
         if (evt.target === resizeButtonDec) {
