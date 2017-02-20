@@ -4,6 +4,8 @@
   var resizeButtonInc = document.querySelector('.upload-resize-controls-button-inc');
   var valueElement = document.querySelector('.upload-resize-controls-value');
   window.initializeScale = function (controlsContainer, step, initScale, newScaleCallBack) {
+    setScaleToValueElement(initScale * 100);
+    newScaleCallBack(initScale);
     controlsContainer.addEventListener('click', function (evt) {
       if (evt.target === resizeButtonDec || evt.target === resizeButtonInc) {
         var stepSign;
@@ -19,8 +21,6 @@
         }
       }
     });
-    setScaleToValueElement(initScale * 100);
-    newScaleCallBack(initScale);
     function setScaleToValueElement(value) {
       valueElement.value = value + '%';
     }
