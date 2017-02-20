@@ -40,5 +40,5 @@ function initializeFilters() {
       onFilterChange();
     }
   });
-};
+}
 initializeFilters();
