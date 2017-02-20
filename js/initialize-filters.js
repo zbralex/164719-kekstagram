@@ -6,7 +6,7 @@ function initializeFilters() {
   var uploadFilterForm = document.querySelector('.upload-filter');
   var prevFilterClass;
   var prevAreaPressedLabel;
-
+  var ENTER_KEY_CODE = 13;
 // пресловутый чейндж - выбор нужного фильтра
   uploadFilterForm.addEventListener('change', onFilterChange);
 
