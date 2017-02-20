@@ -9,8 +9,7 @@
         var stepSign;
         if (evt.target === resizeButtonDec) {
           stepSign = -1;
-        }
-        else {
+        } else {
           stepSign = 1;
         }
         var newScale = getElementScaleValue() + stepSign * step;
