@@ -3,7 +3,7 @@
   window.initializeScale = function (controlsContainer, step, initScale, newScaleCallBack) {
     var valueElement = controlsContainer.querySelector('.upload-resize-controls-value');
     var resizeButtonDec = controlsContainer.querySelector('.upload-resize-controls-button-dec');
-    var resizeButtonInc  = controlsContainer.querySelector('.upload-resize-controls-button-inc');
+    var resizeButtonInc = controlsContainer.querySelector('.upload-resize-controls-button-inc');
     setScaleToValueElement(initScale * 100);
     newScaleCallBack(initScale);
 
@@ -25,6 +25,7 @@
     function setScaleToValueElement(value) {
       valueElement.value = value + '%';
     }
+
     function getElementScaleValue() {
       return parseInt(valueElement.value, 10);
     }
