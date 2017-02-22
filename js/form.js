@@ -42,3 +42,4 @@ function onScaleChanged(newScale) {
   filterImagePreview.style.transform = 'scale(' + newScale + ')';
 }
 window.initializeScale(uploadResizeControls, 25, 1, onScaleChanged);
+window.initializeFilters();
