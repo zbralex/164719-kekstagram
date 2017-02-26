@@ -3,8 +3,8 @@
   window.load = function () {
     var DATA_URL = 'https://intensive-javascript-server-myophkugvq.now.sh/kekstagram/data';
     var errorHandler = function (err) {
-      console.log(err);
-    }
+      window.load()(onLoad);
+    };
     return function (onLoad, onError) {
       var xhr = new XMLHttpRequest();
       if (typeof onError === 'function') {
@@ -24,5 +24,5 @@
       xhr.open('GET', DATA_URL);
       xhr.send();
     };
-  }
+  };
 })();

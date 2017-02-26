@@ -13,7 +13,7 @@
       // ниже переменная для поиска по инпутам, в них добавляются значения value (или имена фильтров)
       var selectedFilter = uploadFilterForm['upload-filter'].value;
       // ниже присваиваем значению новой переменной filterCssClass значение переменной selectedFilter
-      var filterCssClass =  selectedFilter;
+      var filterCssClass = selectedFilter;
       // ниже идет переменная, объявленная в файле form.js, которая является функцией с переданными агрументами
       // filterCssClass, prevFilterClass || newFilter, oldFilter
       applyFilter(filterCssClass, prevFilterClass);
@@ -21,6 +21,7 @@
       prevFilterClass = filterCssClass;
       toggleAreaPressed(selectedFilter);
     }
+
     // обновляем атрибуты area-pressed
     function toggleAreaPressed(selectedFilter) {
       if (prevAreaPressedLabel) {

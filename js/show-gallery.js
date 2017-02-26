@@ -20,5 +20,5 @@
     galleryOverlay.querySelector('img').setAttribute('src', pictureData.url);
     likesCount.innerText = pictureData.likes;
     galleryOverlayControlsComments.innerText = pictureData.comments.length;
-  }
+  };
 })();

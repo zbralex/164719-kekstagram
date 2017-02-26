@@ -21,7 +21,7 @@ var uploadFilterForm = document.querySelector('.upload-filter');
 // - новый примененный фильтр и старый
 // filterImagePreview - это переменная для сужения поиска,
 // не повсему документу, а по конкретному классу .filter-image-preview
-var applyFilter = function(newFilter, oldFilter) {
+var applyFilter = function (newFilter, oldFilter) {
   filterImagePreview.classList.remove('filter-' + oldFilter);
   filterImagePreview.classList.add('filter-' + newFilter);
 };
