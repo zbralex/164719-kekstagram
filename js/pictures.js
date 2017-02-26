@@ -29,5 +29,9 @@
     });
   }
 
+  function onError(error) {
+    window.load()(onLoad);
+  }
+
   window.load()(onLoad, onError);
 })();
