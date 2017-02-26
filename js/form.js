@@ -2,7 +2,6 @@
 var ESCAPE_KEY_CODE = 27;
 var ENTER_KEY_CODE = 13;
 // resize variables
-
 var filterImagePreview = document.querySelector('.filter-image-preview');
 var uploadResizeControls = document.querySelector('.upload-resize-controls');
 var uploadOverlay = document.querySelector('.upload-overlay');
@@ -16,6 +15,16 @@ uploadFormCancel.addEventListener('click', function () {
   uploadOverlay.classList.add('invisible');
   uploadSelectImage.classList.remove('invisible');
 });
+// переменная, которая ищет по документу класс селектора .upload-filter
+var uploadFilterForm = document.querySelector('.upload-filter');
+// переменная, которая явл-ся функцией с объявленными параметрами newFilter, oldFilter
+// - новый примененный фильтр и старый
+// filterImagePreview - это переменная для сужения поиска,
+// не повсему документу, а по конкретному классу .filter-image-preview
+var applyFilter = function(newFilter, oldFilter) {
+  filterImagePreview.classList.remove('filter-' + oldFilter);
+  filterImagePreview.classList.add('filter-' + newFilter);
+};
 // функция показа элемента
 function showElementOverlay() {
   uploadSelectImage.classList.add('invisible');
@@ -42,4 +51,5 @@ function onScaleChanged(newScale) {
   filterImagePreview.style.transform = 'scale(' + newScale + ')';
 }
 window.initializeScale(uploadResizeControls, 25, 1, onScaleChanged);
-window.initializeFilters();
+//
+window.initializeFilters(uploadFilterForm, applyFilter);
