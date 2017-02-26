@@ -3,7 +3,6 @@
   window.load = function () {
     var DATA_URL = 'https://intensive-javascript-server-myophkugvq.now.sh/kekstagram/data';
     var errorHandler = function (err) {
-      window.load()(onLoad);
     };
     return function (onLoad, onError) {
       var xhr = new XMLHttpRequest();

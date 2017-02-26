@@ -28,4 +28,5 @@
       picturesContainerElement.appendChild(pictureElement);
     });
   }
+  window.load()(onLoad);
 })();
