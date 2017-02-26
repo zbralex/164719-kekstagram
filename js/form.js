@@ -53,3 +53,4 @@ function onScaleChanged(newScale) {
 window.initializeScale(uploadResizeControls, 25, 1, onScaleChanged);
 //
 window.initializeFilters(uploadFilterForm, applyFilter);
+
