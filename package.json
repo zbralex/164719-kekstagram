@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/htmlacademy-javascript/164719-kekstagram",
   "devDependencies": {
-    "eslint": "3.9.0",
+    "eslint": "6.6.0",
     "eslint-config-htmlacademy": "0.2.x"
   },
   "dependencies": {},
